@@ -14,4 +14,5 @@ class devlaptop {
   include virtualbox
   include mysql
   include sublimetext2
+  include redis
 }

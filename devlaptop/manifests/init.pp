@@ -15,4 +15,6 @@ class devlaptop {
   include mysql
   include sublimetext2
   include redis
+  include mongodb
+  include lm-sensors
 }

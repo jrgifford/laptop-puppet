@@ -7,11 +7,15 @@ class jrgifford {
     location   => 'http://ppa.launchpad.net/nvbn-rm/ppa/ubuntu',
     repos      => 'main',
     key        => '9C8631BA',
+    release    => 'quantal',
     key_server => 'keyserver.ubuntu.com',
   }
-  package { "everpad": ensure => installed }
+  package { "git": ensure => installed }
+  package { "pandoc": ensure => installed }
+  package { "shutter": ensure => installed }
+  package { "everpad": ensure => installed, require => apt::source['everpad'] }
   package { "python-gpgme": ensure => installed }
-  package { "dostuff": ensure => installed } 
+  package { "dostuff": ensure => installed, require => apt::source['dostuff'] } 
   apt::source { "dostuff":
     location   => 'http://ppa.launchpad.net/ximilian/ppa/ubuntu',
     repos      => 'main',
@@ -26,7 +30,7 @@ class jrgifford {
     key_server => 'pgp.mit.edu',
     release    => 'precise',
    }
-  package { "dropbox": ensure => installed }
+  package { "dropbox": ensure => installed, require => apt::source['dropbox']}
   package { "unity-lens-shopping": ensure => absent }
   package { "htop": ensure => installed }
   package { "zsync": ensure => installed }
@@ -37,12 +41,9 @@ class jrgifford {
   package { "inkscape": ensure => installed }
   package { "enigmail": ensure => installed }
   package { "ekiga": ensure => installed }
-  
-  rbenv::install { "jrg":
-    home  => '/home/jrg'
-  }
-  rbenv::compile { "jrg/1.9.3":
-    user => "jrg",
-    ruby => "1.9.3-p327",
-  }
+  package { "git-core": ensure => installed }
+  package { "sqlite3": ensure => installed }
+  package { "libapr1": ensure => installed }
+  package { "libaprutil1": ensure => installed }
+  package { "subversion": ensure => installed }  
 }

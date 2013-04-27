@@ -4,4 +4,5 @@ class networkdebug {
   package { "nmap": ensure => installed }
   package { "siege": ensure => installed }
   package { "wireshark": ensure => installed }
+  package { "tcpdump": ensure => installed }
 }

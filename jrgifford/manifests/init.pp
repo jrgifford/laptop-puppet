@@ -1,5 +1,7 @@
 class jrgifford {
   package { "vim": ensure => installed }
+  package { "glabels": ensure => installed }
+  package { "vnstat": ensure => installed }
   package { "byobu": ensure => installed }
   package { "keepass2": ensure => installed }
   package { "keepassx": ensure => installed }
@@ -7,7 +9,6 @@ class jrgifford {
     location   => 'http://ppa.launchpad.net/nvbn-rm/ppa/ubuntu',
     repos      => 'main',
     key        => '9C8631BA',
-    release    => 'quantal',
     key_server => 'keyserver.ubuntu.com',
   }
   package { "git": ensure => installed }

@@ -16,14 +16,14 @@ class jrgifford {
   package { "shutter": ensure => installed }
   package { "everpad": ensure => installed, require => apt::source['everpad'] }
   package { "python-gpgme": ensure => installed }
-  package { "dostuff": ensure => installed, require => apt::source['dostuff'] } 
-  apt::source { "dostuff":
-    location   => 'http://ppa.launchpad.net/ximilian/ppa/ubuntu',
-    repos      => 'main',
-    key        => 'D2FFD835',
-    key_server => 'keyserver.ubuntu.com', 
-    release    => 'precise',
-  }
+#  package { "dostuff": ensure => installed, require => apt::source['dostuff'] } 
+#  apt::source { "dostuff":
+#    location   => 'http://ppa.launchpad.net/ximilian/ppa/ubuntu',
+#    repos      => 'main',
+#    key        => 'D2FFD835',
+#    key_server => 'keyserver.ubuntu.com', 
+#    release    => 'precise',
+#  }
   apt::source { 'dropbox':
     location   => 'http://linux.dropbox.com/ubuntu',
     repos      => 'main',
